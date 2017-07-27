@@ -1,0 +1,22 @@
+/* 散点图组件样式 */
+.h5_component_scatter {  }
+.h5_component_scatter .scatter {
+	display: block;
+	background-color: #ccc;
+	position: absolute;
+	border-radius: 50%;
+}
+.h5_component_scatter .name {
+	height: auto;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	/*margin-top: -15px;*/
+	transform: translateY(-50%);
+	font-size: 22px;
+}
+
+.h5_component_scatter .per {
+	font-size: 0.5em;
+}

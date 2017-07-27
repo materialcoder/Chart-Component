@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>柱状图组件</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+			font-size: 12px;
+			font-family: "Microsoft Yahei";
+		}
+		.iphone {
+			width: 340px;
+			height: 540px;
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -270px 0 0 -170px;
+			overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" href="../css/H5ComponentBase.css">
+	<script src="../js/lib/jquery.js"></script>
+	<script src="../js/H5ComponentBase.js"></script>
+
+	<!-- 引入柱状图的资源 -->
+	<link rel="stylesheet" type="text/css" href="css/H5ComponentBar.css">
+	<script src="js/H5ComponentBar.js"></script>
+</head>
+<body>
+	<!-- 用于开发测试 H5ComponentBar 对象 （柱状图组件） -->
+	<div class="iphone">
+		
+	</div>
+
+	<script>
+		var cfg = {
+			type: 'bar',
+			width: 530,
+			height: 600,
+			data: [
+				['JavaScript', .5, '#ff7676'],
+				['HTML/CSS', .2],
+				['CSS3', .1],
+				['HTML5', .25],
+				['jQuery', .15],
+				['BootStrap', .3],
+				['C++', .05]
+			],
+			css: {
+				top: 100,
+				opacity: 0
+			},
+			animateIn: {
+				opacity: 1,
+				top: 200
+			},
+			animateOut: {
+				opacity: 0,
+				top: 100
+			},
+			center: true
+		}
+
+		var h5 = new H5ComponentBar('myBarComponent',cfg);
+		$('.iphone').append(h5);
+
+		var leave = true;
+		$('body').click(function() {
+			leave = !leave;
+			$('.h5_component').trigger( leave ? 'onLeave' : 'onLoad');
+		})
+	</script>
+</body>
+</html>

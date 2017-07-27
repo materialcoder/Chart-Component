@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>test-H5</title>
+	<link rel="stylesheet" href="../css/H5.css">
+	<link rel="stylesheet" href="../css/H5ComponentBase.css">
+	<!-- 基本资源库 -->
+	<script src="../js/lib/jquery.js"></script>
+	<script src="../js/lib/jquery-ui.min.js"></script>
+	<script src="../js/lib/jquery.fullPage.min.js"></script>
+	<!-- H5对象资源&&内容组件： 页-组件 -->
+	<script src="../js/H5.js"></script>
+	<script src="../js/H5ComponentBase.js"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 测试内容组织功能，以及fullPage页面切换&&组件切换 -->
+
+	<!-- 内容组织管理，有可能会加载若干个资源 -->
+
+	<script>
+		$(function() {
+			var h5 = new H5();
+			h5
+			.addPage('face')
+				.addComponent('logo',{
+					text:'logo',
+					width: 400,
+					height: 100,
+					css: {backgroundColor: 'red', top:200},
+					center: true,
+					animateIn: {
+						opacity: 1
+					},
+					animateOut: {
+						opacity: 0
+					}
+				})
+				.addComponent('slogan',{
+					text:'slogan',
+					width: 400,
+					height: 100,
+					css: {backgroundColor: 'green', top:350},
+					center: true
+				})
+			.addPage('desc')
+				.addComponent('caption',{
+					text:'核心理念',
+					width: 400,
+					height: 100,
+					css: {backgroundColor: 'red', top:350},
+					center: true
+				})
+			.addPage('page-3')
+				.addComponent('caption',{text:'课程方向分布'})
+			.loader();
+		})
+	</script>
+</body>
+</html>

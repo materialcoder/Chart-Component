@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>散点图组件</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+			font-size: 12px;
+			font-family: "Microsoft Yahei";
+		}
+		.iphone {
+			width: 340px;
+			height: 540px;
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -270px 0 0 -170px;
+			overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" href="../css/H5ComponentBase.css">
+	<script src="../js/lib/jquery.js"></script>
+	<script src="../js/H5ComponentBase.js"></script>
+
+	<!-- 引入散点图的资源 -->
+	<link rel="stylesheet" type="text/css" href="css/H5ComponentScatter.css">
+	<script src="js/H5ComponentScatter.js"></script>
+</head>
+<body>
+	<!-- 用于开发测试 H5ComponentScatter 对象 （散点图组件） -->
+	<div class="iphone">
+		
+	</div>
+
+	<script>
+		var cfg = {
+			type: 'scatter',
+			width: 300,
+			height: 300,
+			data: [
+				['A项', .4, 'green'],
+				['B项', .2, 'red', 0 , '-60%'],
+				['C项', .2, 'blue',0 , '120%']
+			],
+			css: {
+				bottom: 0,
+				opacity: 0
+			},
+			animateIn: { bottom: '40%', opacity: 1 },
+			animateOut: { bottom: 0, opacity: 0 },
+			center: true
+		}
+
+		var h5 = new H5ComponentScatter('myName',cfg);
+		$('.iphone').append(h5);
+
+		var leave = true;
+		$('body').click(function() {
+			leave = !leave;
+			$('.h5_component').trigger( leave ? 'onLeave' : 'onLoad');
+		})
+	</script>
+</body>
+</html>

@@ -22,23 +22,23 @@ var h5 = new H5();
 
 cfg中包含：
 
-type: string，组件类型，有polyline, bar, barverticla, pie, radar, ring, ringbig, scatter
+**type**: string，组件类型，有polyline, bar, barverticla, pie, radar, ring, ringbig, scatter
 
-width/height: number，组件的宽度和高度
+**width/height**: number，组件的宽度和高度
 
-text: string，文本内容
+**text**: string，文本内容
 
-center： boolean,是否居中显示，true为居中
+**center**： boolean,是否居中显示，true为居中
 
-css: 要设置的样式
+**css**: 要设置的组件样式
 
-animateIn: 进入页面时的动画
+**animateIn**: 进入页面时的动画
 
-animateOut: 离开页面时的动画
+**animateOut**: 离开页面时的动画
 
-bg: 背景图片地址
+**bg**: 背景图片地址
 
-例如：
+可采用如下的方法添加页面和组件，例如：
 ```javascript
 h5.addPage()
     .addComponent('caption',{text:'课程方向分布'})//polyline

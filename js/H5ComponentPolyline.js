@@ -17,7 +17,7 @@ var H5ComponentPolyline = function(name, cfg) {
 	//水平网格线 100份 -> 10份
 	var step = 10;
 	ctx.beginPath();
-	ctx.lineWidth = 1;
+	ctx.lineWidth = 2;
 	ctx.strokeStyle = '#AAAAAA';
 
 	for(var i = 0;i < step+1;i++) {
@@ -61,7 +61,7 @@ var H5ComponentPolyline = function(name, cfg) {
 		ctx.clearRect(0,0,w,h);
 		// 绘制折线数据
 		ctx.beginPath();
-		ctx.lineWidth = 3;
+		ctx.lineWidth = 4;
 		ctx.strokeStyle = '#ff8878';
 
 		var x=0,y=0;
@@ -102,7 +102,8 @@ var H5ComponentPolyline = function(name, cfg) {
 			x = row_w*i+row_w;
 			y=h-(item[1]*h*per);
 			ctx.fillStyle = item[2] ? item[2] : "#595959";
-			ctx.fillText( ((item[1]*100)>>0)+'%', x-10, y-10);
+			ctx.font = "24px Arial";
+			ctx.fillText( ((item[1]*100)>>0)+'%', x-10, y-15);
 		}
 
 		ctx.stroke();

@@ -18,7 +18,7 @@
 	bottom: -20px;
 	height: 20px;
 	line-height: 20px;
-	transform: scale(.8); /*Chrome不会显示字体小于12px的效果，所以采用缩放*/
+	/*transform: scale(.8); Chrome不会显示字体小于12px的效果，所以采用缩放*/
 	-webkit-transition: all 1s 1.5s;
 	transition: all 1s 1.5s;
 	opacity: 0;

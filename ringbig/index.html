@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大环图组件</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+			font-size: 12px;
+			font-family: "Microsoft Yahei";
+		}
+		.iphone {
+			width: 340px;
+			height: 540px;
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -270px 0 0 -170px;
+			overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" href="../css/H5ComponentBase.css">
+	<script src="../js/lib/jquery.js"></script>
+	<script src="../js/H5ComponentBase.js"></script>
+
+	<!-- 引入大环图的资源 -->
+	<link rel="stylesheet" type="text/css" href="css/H5ComponentRingbig.css">
+	<script src="js/H5ComponentRingbig.js"></script>
+</head>
+<body>
+	<!-- 用于开发测试 H5ComponentRingbig对象 （大环图组件） -->
+	<div class="iphone">
+		
+	</div>
+
+	<script>
+		var cfg = {
+			type: 'ringbig',
+			width: 400,
+			height: 400,
+			data: [
+				['JS', .4, '#ff7676'],
+				['HTML', .2],
+				['CSS3', .1],
+				['HTML5', .2],
+				['jQuery', .1]
+			],
+			css: {
+				top: 200,
+				opacity: 1
+			},
+			animateIn: {
+				opacity: 1,
+				top: 200
+			},
+			animateOut: {
+				opacity: 0,
+				top: 100
+			},
+			center: true
+		}
+
+		var h5 = new H5ComponentRingbig('myRingbigComponent',cfg);
+		$('.iphone').append(h5);
+
+		var leave = true;
+		$('body').click(function() {
+			leave = !leave;
+			$('.h5_component').trigger( leave ? 'onLeave' : 'onLoad');
+		});
+	</script>
+</body>
+</html>

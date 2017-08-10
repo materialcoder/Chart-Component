@@ -26,7 +26,7 @@ var H5ComponentScatter = function(name, cfg) {
 		if(item[3] !== undefined && item[4] !== undefined) {
 			scatter.css('left',item[3]).css('top',item[4]);
 		}
-		scatter.css('transition','all 1s '+idx*1+'s');
+		scatter.css('transition','all 1s '+idx*(0.5)+'s');
 
 		component.append(scatter);
 	});

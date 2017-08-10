@@ -52,6 +52,9 @@ var H5 = function() {
 			case 'bar':
 				component = new H5ComponentBar(name, cfg);
 				break;
+			case 'barvertical':
+				component = new H5ComponentBarvertical(name, cfg);
+				break;
 			case 'pie':
 				component = new H5ComponentPie(name, cfg);
 				break;
@@ -63,6 +66,9 @@ var H5 = function() {
 				break;
 			case 'ring':
 				component = new H5ComponentRing(name, cfg);
+				break;
+			case 'ringbig':
+				component = new H5ComponentRingbig(name, cfg);
 				break;
 			default:
 		}

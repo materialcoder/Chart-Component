@@ -82,6 +82,7 @@ var H5ComponentRadar = function(name, cfg) {
 	component.append(cns);
 
 	ctx.strokeStyle = "#f00";
+	ctx.lineWidth = 4;
 	var draw = function(per) {
 		if(per>=1) {
 			component.find(".text").css("opacity",1);
@@ -111,7 +112,7 @@ var H5ComponentRadar = function(name, cfg) {
 			var y = r + Math.cos(rad)*r*rate;
 
 			ctx.beginPath();
-			ctx.arc(x,y,5,0,2*Math.PI);
+			ctx.arc(x,y,6,0,2*Math.PI);
 			ctx.fill();
 			ctx.closePath();
 		}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
 	<title>IT教育网课程学习分布情况</title>
 
 	<!-- 载入所有的组件资源 -->
@@ -31,10 +31,9 @@
 			background-image: url('imgs/face_bg.png');
 		}
 		.h5_component_name_slogan {
-			-webkit-animation: rock 2s infinite 2s;
 			animation: rock 2s infinite 2s;
 		}
-		@-webkit-keyframes rock {
+		@keyframes rock {
 			0% {
 				transform: rotate(0deg);
 			}
@@ -75,10 +74,9 @@
 		}
 		.h5_component_name_back {
 			top: 30px;
-			-webkit-animation: back 2s infinite 2s;
 			animation: back 2s infinite 2s;
 		}
-		@-webkit-keyframes back {
+		@keyframes back {
 			50% {top: 20px;}
 		}
 	</style>
@@ -96,7 +94,7 @@
 
 	<!-- 加载H5组件相关资源 -->
 	<script>
-		var res = ['Base','Bar','Scatter','Polyline','Radar','Pie','Ring'];
+		var res = ['Base','Bar','Barvertical','Scatter','Polyline','Radar','Pie', 'Ring','Ringbig'];
 		var html = [];
 		for(s in res) {
 			html.push('<script src="js\/H5Component'+res[s]+'.js"><\/script>');
@@ -109,6 +107,7 @@
 	<script>
 		$(function() {
 			var h5 = new H5();
+			// 在每次addPage操作之后，在当页添加一个页脚组件
 			h5.whenAddPage = function() {
 				this.addComponent('slide_up',{
 					bg: 'imgs/footer.png',
@@ -131,6 +130,7 @@
 					delay: 500
 				})
 			}
+
 			h5
 			.addPage('face')
 				.addComponent('logo',{
@@ -186,7 +186,7 @@
 					width: 500,
 					height:30,
 					center: true,
-					text: 'IT教育。。。。',
+					text: 'Web APP',
 					css: {
 						opacity: 0, textAlign: 'center', color: 'red', fontSize: '26px'
 					},
@@ -213,7 +213,7 @@
 						textAlign: 'justify',
 						top: 280
 					},
-					text: '2013时凡是工会四公司供货商为公司工会四个号公司电话公诉机关很多事感受国会大厦更是东航山东',
+					text: '这是一个手机端Web APP，采用组件式开发。总共有六种图表，包括折线图，饼状图，雷达图，条形图(横、竖)，散点图和环形图（粗、细）。',
 					animateIn: {
 						opacity: 1,
 						top: 200
@@ -250,11 +250,11 @@
 					width: 530,
 					height: 300,
 					data: [
-						['JS', .5, '#ff7676'],
-						['HTML', .2],
-						['CSS3', .1],
-						['HTML5', .25],
-						['jQuery', .15]
+						['JS', .8, '#ff7676'],
+						['HTML', .3],
+						['CSS3', .6],
+						['HTML5', .4],
+						['jQuery', .7]
 					],
 					css: {
 						top: 100,
@@ -355,7 +355,36 @@
 					animateOut: {opacity: 0}
 				})
 			.addPage()
-				.addComponent('caption',{text:'后端开发课程'})//radar
+				.addComponent('caption',{text:'前端开发课程'})//barvertical
+				.addComponent('barvertical',{
+					type: 'barvertical',
+					width: 530,
+					height: 500,
+					data: [
+						['JavaScript', .5, '#ff7676'],
+						['HTML/CSS', .2],
+						['CSS3', .4],
+						['HTML5', .25],
+						['jQuery', .15],
+						['BootStrap', .3],
+						['C++', .05]
+					],
+					css: {
+						top: 100,
+						opacity: 0
+					},
+					animateIn: {
+						opacity: 1,
+						top: 100
+					},
+					animateOut: {
+						opacity: 0,
+						top: 200
+					},
+					center: true
+				})
+			.addPage()
+				.addComponent('caption',{text:'前端开发课程'})//radar
 				.addComponent('radar',{
 					type: 'radar',
 					width: 400,
@@ -382,8 +411,6 @@
 					center: true
 				})
 			.addPage()
-				.addComponent('caption',{text:'课程报名人数过万'})//ring
-			.addPage()
 				.addComponent('caption',{text:'课程难度分布'})//scatter
 				.addComponent('scatter',{
 					type: 'scatter',
@@ -400,6 +427,56 @@
 					},
 					animateIn: { opacity: 1 },
 					animateOut: { opacity: 0 },
+					center: true
+				})
+			.addPage()
+				.addComponent('caption',{text:'课程难度分布'})
+				.addComponent('ringbig', { //ringbig
+					type: 'ringbig',
+					width: 400,
+					height: 400,
+					data: [
+						['JS', .4, '#ff7676'],
+						['HTML', .2],
+						['CSS3', .1],
+						['HTML5', .2],
+						['jQuery', .1]
+					],
+					css: {
+						top: 120,
+						opacity: 1
+					},
+					animateIn: {
+						opacity: 1,
+						top: 120
+					},
+					animateOut: {
+						opacity: 0,
+						top: 0
+					},
+					center: true
+				})
+				.addComponent('ring',{ //ring
+					type: 'ring',
+					width: 600,
+					height: 200,
+					data: [
+						['JS', .75, '#ff7676'],
+						['HTML', .6, '#da5858'],
+						['CSS3', .9, '#46a0de']
+					],
+					css: {
+						top: 400,
+						opacity: 1
+					},
+					animateIn: {
+						opacity: 1,
+						top: 400
+					},
+					animateOut: {
+						opacity: 0,
+						bottom: 40
+					},
 					center: true
 				})
 			.addPage('tail')

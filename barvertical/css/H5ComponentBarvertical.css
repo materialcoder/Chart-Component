@@ -1,0 +1,74 @@
+/* 柱状图-（立式）组件样式 */
+.h5_component_barvertical {
+
+}
+
+.h5_component_barvertical .line {
+	width: 15px;
+	height: 100%;
+	font-size: 12px;
+	line-height: 15px;
+	float: left;
+	margin: 0px 10px;
+}
+
+.h5_component_barvertical .rate {
+	width: 15px;
+	margin-left: 5px;
+	float: left;
+	position: relative;
+}
+
+.h5_component_barvertical .name {
+	width: 60px;
+	float: left;
+	color: #000;
+	text-align: left;
+	transform: rotateZ(90deg);
+	position: absolute;
+	left: -23px;
+	bottom: -42px;
+}
+
+.h5_component_barvertical .rate .bg {
+	background-color: #99c0ff;
+	width: 100%;
+	height: 0%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-radius: 3px;
+}
+
+.h5_component_barvertical .per {
+	width: 20px;
+	color: #99c0ff;
+	/*margin-left: 5px;*/
+	/*float: left;*/
+	position: absolute;
+	top: -20px;
+	opacity: 0;
+}
+
+.h5_component_barvertical_load .rate .bg {
+	-webkit-transition: all 1s .5s;
+	transition: all 1s .5s;
+	height: 100%;
+}
+
+
+.h5_component_barvertical_leave .rate .bg {
+	-webkit-transition: all 1s;
+	transition: all 1s;
+	height: 0%;
+}
+
+.h5_component_barvertical_load .per {
+	-webkit-transition: all 1s 1.5s;
+	transition: all 1s 1s;
+	opacity: 1;
+}
+
+.h5_component_barvertical_leave .per {
+	opacity: 0;
+}

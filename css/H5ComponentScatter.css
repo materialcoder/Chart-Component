@@ -6,7 +6,7 @@
 	position: absolute;
 	border-radius: 50%;
 	color: #fff;
-	transition: all .5s;
+	opacity: 0;
 }
 .h5_component_scatter .name {
 	height: auto;
@@ -21,4 +21,10 @@
 
 .h5_component_scatter .per {
 	font-size: 0.5em;
+}
+.h5_component_scatter_load .scatter {
+	opacity: 1;
+}
+.h5_component_scatter_leave .scatter {
+	opacity: 0;
 }

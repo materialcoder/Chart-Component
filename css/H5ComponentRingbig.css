@@ -1,0 +1,21 @@
+/* 大环图组件样式 */
+.h5_component_ringbig {
+	
+}
+
+.h5_component_ringbig canvas {
+	position: absolute;
+	left: 0;
+	top: 0; /*用canvas做动画，会进行分层，要用到z-index*/
+	width: 100%;
+	height: 100%;
+}
+
+.h5_component_ringbig .text {
+	position: absolute; 
+	text-align: center;
+	z-index: 999;
+	height: 24px;
+	font-size: 12px;
+	transition: all 1s;
+}

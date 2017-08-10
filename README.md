@@ -21,13 +21,21 @@ var h5 = new H5();
 新增一个组件。name为组件名称，cfg为配置参数对象。
 
 cfg中包含：
+
 type: string，组件类型，有polyline, bar, barverticla, pie, radar, ring, ringbig, scatter
+
 width/height: number，组件的宽度和高度
+
 text: string，文本内容
+
 center： boolean,是否居中显示，true为居中
+
 css: 要设置的样式
+
 animateIn: 进入页面时的动画
+
 animateOut: 离开页面时的动画
+
 bg: 背景图片地址
 
 例如：
